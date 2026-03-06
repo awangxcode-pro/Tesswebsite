@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Awang OfficiaL - Keranjang Belanja</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>Awang OfficiaL</h2>
+            <p>Membuka keranjang...</p>
+        </div>
+    </div>
+    <script>if(sessionStorage.getItem('awangMarketLoaded')){document.getElementById('page-loader').style.display='none';}</script>
+
+    <div class="dedicated-page-header">
+        <div class="dedicated-header-content">
+            <i class="fas fa-shopping-cart header-icon"></i>
+            <h1>Keranjang Belanja</h1>
+            <p>Periksa kembali daftar pesanan Anda sebelum melakukan pembayaran.</p>
+        </div>
+    </div>
+
+    <main class="page-transition">
+        <div class="view-section active">
+            <section class="cart-page-section">
+                
+                <div class="cart-page-container">
+                    
+                    <div class="cart-items-section luxury-card">
+                        <div class="card-title-luxe">
+                            <i class="fas fa-shopping-basket"></i>
+                            <h3>Daftar Pesanan Anda</h3>
+                        </div>
+                        <div id="cart-page-items-container" class="cart-items-list">
+                        </div>
+                    </div>
+
+                    <div class="cart-summary-section luxury-card">
+                        <div class="card-title-luxe">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                            <h3>Ringkasan Pesanan</h3>
+                        </div>
+                        
+                        <div class="summary-details">
+                            <div class="summary-row">
+                                <span>Total Item</span>
+                                <span id="cart-page-total-items" class="fw-bold">0</span>
+                            </div>
+                            <div class="summary-row total-row">
+                                <span>Total Tagihan</span>
+                                <strong id="cart-page-grand-total" class="text-primary-luxe">Rp 0</strong>
+                            </div>
+                        </div>
+
+                        <div class="nota-form cart-checkout-form">
+                            <div class="info-alert-luxe highlight-luxe" style="margin-bottom: 20px;">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Tambahkan catatan jika diperlukan untuk pesanan di keranjang (Opsional).</p>
+                            </div>
+                            
+                            <div class="input-group-luxe">
+                                <label for="cart-order-notes"><i class="fas fa-pen"></i> Catatan Pesanan</label>
+                                <textarea id="cart-order-notes" placeholder="Misal: ID Server, Username, atau instruksi khusus..."></textarea>
+                            </div>
+                        </div>
+
+                        <button id="btn-page-checkout-cart" class="action-btn checkout-btn-luxe">
+                            <i class="fab fa-whatsapp"></i> Checkout Semua via WA
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Tentang Toko</h3>
+                <p id="footer-about"></p>
+            </div>
+            <div class="footer-col">
+                <h3>Tautan Cepat</h3>
+                <ul id="footer-quick-links"></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <ul class="contact-info">
+                    <li><a id="link-email" href=""><i class="fas fa-envelope"></i> <span id="footer-email"></span></a></li>
+                    <li><a id="link-phone" href=""><i class="fas fa-phone"></i> <span id="footer-phone"></span></a></li>
+                    <li><a id="link-address" href="" target="_blank"><i class="fas fa-map-marker-alt"></i> <span id="footer-address"></span></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <div id="social-links" class="social-links"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-copyright"></p>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item">
+            <i class="fas fa-store"></i>
+            <span>Toko</span>
+        </a>
+        <a href="/prod" class="nav-item">
+            <i class="fas fa-box"></i>
+            <span>Produk</span>
+        </a>
+        <a href="/pay" class="nav-item">
+            <i class="fas fa-receipt"></i>
+            <span>Pembayaran</span>
+        </a>
+        <a href="/prof" class="nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>Info</span>
+        </a>
+        <a href="/cart" class="nav-item cart-nav-btn active">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span id="cart-badge" class="cart-badge-nav">0</span>
+        </a>
+    </nav>
+
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

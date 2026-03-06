@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Awang OfficiaL - Daftar Produk</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>Awang OfficiaL</h2>
+            <p>Memuat katalog produk...</p>
+        </div>
+    </div>
+    <script>if(sessionStorage.getItem('awangMarketLoaded')){document.getElementById('page-loader').style.display='none';}</script>
+
+    <header class="luxe-dashboard-header">
+        <div class="header-banner-container">
+            <img id="main-banner" src="" alt="Banner Utama" class="header-banner-img">
+            <div class="banner-bottom-fade"></div>
+        </div>
+
+        <div class="header-top-profile">
+            <div class="profile-avatar-container">
+                <img id="store-profile" src="" alt="Profil Toko" class="profile-avatar-img">
+            </div>
+            <div class="profile-info-text">
+                <h2 id="store-name"></h2>
+                <p id="short-description"></p>
+            </div>
+            <div class="header-action-icon" onclick="window.location.href='/chat'" style="cursor: pointer;" title="Tanya AI CS">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="slanted-separator"></div>
+
+    <main class="page-transition overlap-main">
+        <div class="view-section active">
+            <div class="product-page-top">
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="Cari layanan atau produk digital...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <section id="category-section" class="product-section">
+                <div class="category-header">
+                    <h2>Katalog Layanan Kami</h2>
+                    <p class="section-subtitle">Pilih kategori layanan di bawah ini untuk melihat detail harga dan spesifikasi.</p>
+                </div>
+                
+                <div id="category-grid" class="category-grid-layout"></div>
+            </section>
+        </div>
+    </main>
+
+    <div id="category-products-modal" class="modal-overlay">
+        <div class="modal-content luxury-modal list-modal-content">
+            <button id="close-category-products" class="close-modal"><i class="fas fa-times"></i></button>
+            <div class="nota-header">
+                <h2 id="modal-category-title"><i class="fas fa-list"></i> Daftar Layanan</h2>
+                <p id="modal-category-desc" class="nota-date">Pilih layanan yang sesuai dengan kebutuhan Anda.</p>
+            </div>
+            
+            <div id="modal-product-list" class="modal-product-list"></div>
+        </div>
+    </div>
+
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-content luxury-modal">
+            <button id="close-checkout" class="close-modal"><i class="fas fa-arrow-left"></i></button>
+            <div class="nota-header luxury-title-wrapper" style="margin-bottom: 20px;">
+                <h2><i class="fas fa-file-invoice-dollar"></i> Detail Pesanan</h2>
+                <p id="nota-date" class="nota-date"></p>
+            </div>
+            
+            <div class="nota-body">
+                <div class="icon-only-info">
+                    <div class="product-icon-box">
+                        <i id="nota-icon" class="fas fa-box"></i>
+                    </div>
+                    <div class="nota-details">
+                        <h3 id="nota-title">Nama Layanan</h3>
+                        <p id="nota-price" class="nota-price">Rp 0</p>
+                    </div>
+                </div>
+                
+                <div class="nota-qty-control">
+                    <label>Jumlah Pesan:</label>
+                    <div class="qty-wrapper">
+                        <button id="btn-qty-min" class="qty-btn"><i class="fas fa-minus"></i></button>
+                        <input type="number" id="input-qty" value="1" min="1" max="99" readonly>
+                        <button id="btn-qty-plus" class="qty-btn"><i class="fas fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <div class="nota-total-box">
+                    <span>Total Harga:</span>
+                    <strong id="nota-total-price">Rp 0</strong>
+                </div>
+
+                <div class="nota-form">
+                    <div class="info-alert-luxe highlight-luxe" style="margin-bottom: 15px; padding: 12px 15px;">
+                        <i class="fas fa-info-circle"></i>
+                        <p style="font-size: 13px;">*Tambahkan catatan jika diperlukan (Opsional).</p>
+                    </div>
+                    <div class="input-group-luxe">
+                        <label for="order-notes"><i class="fas fa-pen"></i> Catatan Pesanan</label>
+                        <textarea id="order-notes" placeholder="Misal: ID Server, Username, atau instruksi khusus..."></textarea>
+                    </div>
+                </div>
+
+                <div class="nota-actions">
+                    <button id="btn-manual-pay" class="action-btn checkout-btn-luxe">
+                        <i class="fas fa-check-circle"></i> Beli Sekarang
+                    </button>
+                    <button id="btn-add-cart" class="action-btn cart-add-btn" style="border-radius: 14px; padding: 14px;">
+                        <i class="fas fa-cart-plus"></i> Simpan ke Keranjang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Tentang Toko</h3>
+                <p id="footer-about"></p>
+            </div>
+            <div class="footer-col">
+                <h3>Tautan Cepat</h3>
+                <ul id="footer-quick-links"></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <ul class="contact-info">
+                    <li><a id="link-email" href=""><i class="fas fa-envelope"></i> <span id="footer-email"></span></a></li>
+                    <li><a id="link-phone" href=""><i class="fas fa-phone"></i> <span id="footer-phone"></span></a></li>
+                    <li><a id="link-address" href="" target="_blank"><i class="fas fa-map-marker-alt"></i> <span id="footer-address"></span></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <div id="social-links" class="social-links"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-copyright"></p>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item">
+            <i class="fas fa-store"></i>
+            <span>Toko</span>
+        </a>
+        <a href="/prod" class="nav-item active">
+            <i class="fas fa-box"></i>
+            <span>Produk</span>
+        </a>
+        <a href="/pay" class="nav-item">
+            <i class="fas fa-receipt"></i>
+            <span>Pembayaran</span>
+        </a>
+        <a href="/prof" class="nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>Info</span>
+        </a>
+        <a href="/cart" class="nav-item cart-nav-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span id="cart-badge" class="cart-badge-nav">0</span>
+        </a>
+    </nav>
+
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

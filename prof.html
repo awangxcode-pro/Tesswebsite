@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Awang OfficiaL - Pusat Informasi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>Awang OfficiaL</h2>
+            <p>Memuat profil & informasi...</p>
+        </div>
+    </div>
+    <script>if(sessionStorage.getItem('awangMarketLoaded')){document.getElementById('page-loader').style.display='none';}</script>
+
+    <main class="page-transition" style="margin-top: 30px;">
+        <div class="view-section active">
+            <section class="profile-page-section">
+                <div class="profile-card">
+                    <div class="profile-card-header luxury-header dark-profile-header">
+                        <div class="profile-image-container">
+                            <img id="owner-img" src="" alt="Owner Profile">
+                        </div>
+                        <h2 id="owner-name"></h2>
+                        <p id="owner-role" class="owner-role"></p>
+                    </div>
+                    
+                    <div class="profile-card-body">
+                        <div class="info-block">
+                            <h3 class="luxury-title"><i class="fas fa-store-alt"></i> Tentang Store</h3>
+                            <p id="owner-about-store" class="owner-about-store"></p>
+                        </div>
+                        
+                        <div class="info-block">
+                            <h3 class="luxury-title"><i class="fas fa-id-badge"></i> Deskripsi</h3>
+                            <p id="owner-desc" class="owner-desc"></p>
+                        </div>
+
+                        <blockquote id="owner-motto" class="owner-motto"></blockquote>
+                        
+                        <div class="owner-contact-box">
+                            <i class="fas fa-headset contact-icon"></i>
+                            <p id="owner-contact-text"></p>
+                            <a id="owner-contact-btn" href="#" target="_blank" class="luxury-btn whatsapp-btn" style="display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff; padding: 12px 25px; border-radius: 30px; text-decoration: none; font-weight: 800; margin-top: 15px;">
+                                <i class="fab fa-whatsapp"></i> Hubungi Customer Service
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Tentang Toko</h3>
+                <p id="footer-about"></p>
+            </div>
+            <div class="footer-col">
+                <h3>Tautan Cepat</h3>
+                <ul id="footer-quick-links"></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <ul class="contact-info">
+                    <li><a id="link-email" href=""><i class="fas fa-envelope"></i> <span id="footer-email"></span></a></li>
+                    <li><a id="link-phone" href=""><i class="fas fa-phone"></i> <span id="footer-phone"></span></a></li>
+                    <li><a id="link-address" href="" target="_blank"><i class="fas fa-map-marker-alt"></i> <span id="footer-address"></span></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <div id="social-links" class="social-links"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-copyright"></p>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item">
+            <i class="fas fa-store"></i>
+            <span>Toko</span>
+        </a>
+        <a href="/prod" class="nav-item">
+            <i class="fas fa-box"></i>
+            <span>Produk</span>
+        </a>
+        <a href="/pay" class="nav-item">
+            <i class="fas fa-receipt"></i>
+            <span>Pembayaran</span>
+        </a>
+        <a href="/prof" class="nav-item active">
+            <i class="fas fa-info-circle"></i>
+            <span>Info</span>
+        </a>
+        <a href="/cart" class="nav-item cart-nav-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span id="cart-badge" class="cart-badge-nav">0</span>
+        </a>
+    </nav>
+
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

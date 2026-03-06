@@ -1,0 +1,26 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/prod",
+      "destination": "/product.html"
+    },
+    {
+      "source": "/prof",
+      "destination": "/profile.html"
+    },
+    {
+      "source": "/pay",
+      "destination": "/payment.html"
+    },
+    {
+      "source": "/cart",
+      "destination": "/cart.html"
+    },
+    {
+      "source": "/chat",
+      "destination": "/chat.html"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Awang OfficiaL - Cek Pesanan & Bayar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>Awang OfficiaL</h2>
+            <p>Memuat pusat transaksi...</p>
+        </div>
+    </div>
+    <script>if(sessionStorage.getItem('awangMarketLoaded')){document.getElementById('page-loader').style.display='none';}</script>
+
+    <div class="dedicated-page-header">
+        <div class="dedicated-header-content">
+            <i class="fas fa-wallet header-icon"></i>
+            <h1>Pusat Pembayaran</h1>
+            <p>Kelola pembayaran Anda di bawah ini dengan mudah, cepat, dan aman.</p>
+        </div>
+    </div>
+
+    <main class="page-transition">
+        <div class="view-section active">
+            <section class="payment-page-section">
+                
+                <div class="payment-block-container">
+
+                    <div class="payment-block bank-block">
+                        <div class="bank-card luxury-card">
+                            <div class="card-title-luxe">
+                                <i class="fas fa-money-check"></i>
+                                <h3>Daftar Rekening Resmi</h3>
+                            </div>
+                            <div class="info-alert-luxe">
+                                <i class="fas fa-money-check-alt"></i>
+                                <p>Pilih salah satu metode pembayaran di bawah ini untuk transaksi manual:</p>
+                            </div>
+                            <ul id="bank-list" class="bank-list"></ul>
+                        </div>
+                    </div>
+
+                    <div class="payment-block qris-block">
+                        <div class="qris-card luxury-card">
+                            <div class="card-title-luxe">
+                                <i class="fas fa-qrcode"></i>
+                                <h3>QRIS All Payment</h3>
+                            </div>
+                            <div class="info-alert-luxe highlight-luxe">
+                                <i class="fas fa-bolt"></i>
+                                <p>Scan kode QRIS di bawah ini menggunakan E-Wallet atau M-Banking Anda (Bebas Biaya Admin).</p>
+                            </div>
+                            
+                            <div class="qris-display-box">
+                                <div class="qris-header">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Logo_QRIS.svg" alt="QRIS Logo" class="qris-logo-img">
+                                </div>
+                                <div class="qris-image-wrapper">
+                                    <img id="qris-image" src="" alt="QRIS Awang OfficiaL" class="qris-main-img">
+                                </div>
+                                <h4 id="qris-name" class="qris-merchant-name"></h4>
+                            </div>
+
+                            <div class="qris-instructions">
+                                <h4><i class="fas fa-list-ol"></i> Tata Cara Pembayaran:</h4>
+                                <ol id="qris-instruction-list"></ol>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Tentang Toko</h3>
+                <p id="footer-about"></p>
+            </div>
+            <div class="footer-col">
+                <h3>Tautan Cepat</h3>
+                <ul id="footer-quick-links"></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <ul class="contact-info">
+                    <li><a id="link-email" href=""><i class="fas fa-envelope"></i> <span id="footer-email"></span></a></li>
+                    <li><a id="link-phone" href=""><i class="fas fa-phone"></i> <span id="footer-phone"></span></a></li>
+                    <li><a id="link-address" href="" target="_blank"><i class="fas fa-map-marker-alt"></i> <span id="footer-address"></span></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <div id="social-links" class="social-links"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-copyright"></p>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item">
+            <i class="fas fa-store"></i>
+            <span>Toko</span>
+        </a>
+        <a href="/prod" class="nav-item">
+            <i class="fas fa-box"></i>
+            <span>Produk</span>
+        </a>
+        <a href="/pay" class="nav-item active">
+            <i class="fas fa-receipt"></i>
+            <span>Pembayaran</span>
+        </a>
+        <a href="/prof" class="nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>Info</span>
+        </a>
+        <a href="/cart" class="nav-item cart-nav-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span id="cart-badge" class="cart-badge-nav">0</span>
+        </a>
+    </nav>
+
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

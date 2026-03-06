@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Awang OfficiaL - Beranda</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="page-loader" class="page-loader">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <h2>Awang OfficiaL</h2>
+            <p>Memuat pengalaman terbaik...</p>
+        </div>
+    </div>
+    <script>if(sessionStorage.getItem('awangMarketLoaded')){document.getElementById('page-loader').style.display='none';}</script>
+
+    <header class="luxe-dashboard-header">
+        <div class="header-banner-container">
+            <img id="main-banner" src="" alt="Banner Utama" class="header-banner-img">
+            <div class="banner-bottom-fade"></div>
+        </div>
+
+        <div class="header-top-profile">
+            <div class="profile-avatar-container">
+                <img id="store-profile" src="" alt="Profil Toko" class="profile-avatar-img">
+            </div>
+            <div class="profile-info-text">
+                <h2 id="store-name"></h2>
+                <p id="short-description"></p>
+            </div>
+            <div class="header-action-icon" onclick="window.location.href='/chat'" style="cursor: pointer;" title="Tanya AI CS">
+                <i class="fas fa-comment-dots"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="slanted-separator"></div>
+
+    <main class="page-transition overlap-main">
+        <div class="view-section active">
+            <section class="welcome-section animated-feature-card">
+                <div class="card-title-luxe-alt">
+                    <i class="fas fa-crown"></i>
+                    <h3>LAYANAN UNGGULAN</h3>
+                </div>
+                <h2>INFRASTRUKTUR TERBAIK</h2>
+                <p>Infrastruktur digital terbaik yang disiapkan khusus untuk mendukung aktivitas bot dan website Anda agar terus online tanpa henti.</p>
+                <a href="/prod" class="action-btn checkout-btn-luxe" style="background: linear-gradient(135deg, #5c2d91 0%, #3a1c5d 100%); box-shadow: 0 8px 20px rgba(92, 45, 145, 0.25);">
+                    Lihat Katalog Lengkap <i class="fas fa-arrow-right"></i>
+                </a>
+            </section>
+            
+            <section class="about-section">
+                <h2>Informasi Operasional</h2>
+                <div id="accordion-container" class="accordion-container"></div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Tentang Toko</h3>
+                <p id="footer-about"></p>
+            </div>
+            <div class="footer-col">
+                <h3>Tautan Cepat</h3>
+                <ul id="footer-quick-links"></ul>
+            </div>
+            <div class="footer-col">
+                <h3>Hubungi Kami</h3>
+                <ul class="contact-info">
+                    <li><a id="link-email" href=""><i class="fas fa-envelope"></i> <span id="footer-email"></span></a></li>
+                    <li><a id="link-phone" href=""><i class="fas fa-phone"></i> <span id="footer-phone"></span></a></li>
+                    <li><a id="link-address" href="" target="_blank"><i class="fas fa-map-marker-alt"></i> <span id="footer-address"></span></a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Ikuti Kami</h3>
+                <div id="social-links" class="social-links"></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p id="footer-copyright"></p>
+        </div>
+    </footer>
+
+    <nav class="bottom-nav">
+        <a href="/" class="nav-item active">
+            <i class="fas fa-store"></i>
+            <span>Toko</span>
+        </a>
+        <a href="/prod" class="nav-item">
+            <i class="fas fa-box"></i>
+            <span>Produk</span>
+        </a>
+        <a href="/pay" class="nav-item">
+            <i class="fas fa-receipt"></i>
+            <span>Pembayaran</span>
+        </a>
+        <a href="/prof" class="nav-item">
+            <i class="fas fa-info-circle"></i>
+            <span>Info</span>
+        </a>
+        <a href="/cart" class="nav-item cart-nav-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Keranjang</span>
+            <span id="cart-badge" class="cart-badge-nav">0</span>
+        </a>
+    </nav>
+
+    <script src="config.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
