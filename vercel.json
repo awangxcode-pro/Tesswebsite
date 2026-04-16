@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/grubbot",
+      "destination": "https://chat.whatsapp.com/DEA9Emn1kGBCN4JpgwWBqg",
+      "permanent": true
+    }
+  ]
+}
